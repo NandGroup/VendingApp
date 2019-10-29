@@ -1,0 +1,35 @@
+$color0:white;
+//dark blue
+$color1:#00aef0;
+//light blue
+$color2:#00a6eb;
+//purple
+$color3:#624df3;
+
+
+//fonts
+$font1:modena;
+$font2:MADEGoodTimeScript;
+@font-face{
+    font-family: MADEGoodTimeScript;
+    src:url(/assets/fonts/MADEGoodTimeScriptPERSONALUSE.otf);
+    font-style: normal;
+}
+@font-face{
+    font-family: modena;
+    src:url('/assets/fonts/MODCB__.ttf'),
+        url('/assets/fonts/Modena-CondensedBold.otf');
+        font-style: normal;
+    }
+@font-face{
+    font-family: modena;
+    src: url('/assets/fonts/MODCL__.ttf'),
+    url('/assets/fonts/Modena-CondensedLight.otf');
+    font-style: normal;
+}    
+@font-face{
+    font-family: modena;
+    src: url('/assets/fonts/MODCM__.ttf'),
+    url('/assets/fonts/Modena-CondensedMedium.otf');
+    font-style: normal;
+}
