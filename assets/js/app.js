@@ -1,9 +1,9 @@
- 
+
  $(document).ready(function(){
-    // setInterval(function () {
-        // $('#data-display-1').delay(2000).fadeIn().delay(2000).fadeOut();
-        $('#data-display-2').delay(2000).fadeIn();
-    // },8000)
+    setInterval(function () {
+        $('#data-display-1').delay(1000).fadeIn(1000).fadeOut();
+        $('#data-display-2').fadeIn().fadeOut();
+    },5000)
   
  });
 
