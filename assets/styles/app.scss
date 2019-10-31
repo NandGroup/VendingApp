@@ -32,7 +32,9 @@ h6 {
 }
 
 .main-bg {
-    background-image: url('/assets/images/home-pg-bg.png');
+    // background-image: url('/assets/images/home-pg-bg.png');
+    background: linear-gradient(to right top, #9905ee, #9704ee, #871cf0, #6c40f2, #4871f6, #3787f8);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
     height: 1320px;
     background-repeat: no-repeat;
     width: 100%;
@@ -193,7 +195,7 @@ h6 {
                     }
 
                     .btn1 {
-                       @include btn();
+                        @include btn();
 
                         a {
                             color: white;
@@ -235,7 +237,7 @@ h6 {
                         color: #00aeef;
                         width: 220px;
 
-                        &:not(:last-child):after {
+                        &:after {
                             content: "";
                             border-bottom-style: solid;
                             border-bottom-width: 2px;
@@ -244,10 +246,12 @@ h6 {
                             color: $color0;
                         }
 
+
                         span {
                             color: $color0;
                         }
                     }
+
                 }
 
                 .makers {
@@ -322,9 +326,9 @@ h6 {
 
                 .btn1 {
                     @include btn();
+
                     a {
                         color: white;
-
 
                     }
                 }
@@ -508,29 +512,27 @@ h6 {
     }
 
     .menu-header {
-        font-family: Modena;
-        font-size: 40.6px;
-        font-weight: 300;
-        font-stretch: condensed;
-        font-style: normal;
-        line-height: 0.85;
-        letter-spacing: normal;
-        text-align: center;
-        color: #ffffff;
-        margin: 3rem 0 2rem;
+        margin:2rem 0 2rem 0;
+        .back-btn {
+            margin-left:2rem;
+            float: left;
+        }
+        .menu {
+            font-family: Modena;
+            font-size: 40.6px;
+            font-weight: 300;
+            font-stretch: condensed;
+            font-style: normal;
+            line-height: 1.9;
+            letter-spacing: normal;
+            text-align: center;
+            color: #ffffff;
+            margin-right: 9rem;
+        }
     }
 
+
     .ht-menu {
-        &:after {
-            content: "";
-            width: 100%;
-            height: 2px;
-            background-color: white;
-            left: 0;
-            right: 0;
-            position: absolute;
-            display: block
-        }
         .item-category {
             width: 97px;
             height: 32px;
@@ -543,9 +545,11 @@ h6 {
             letter-spacing: normal;
             text-align: left;
             color: $color1;
-            padding: 1rem 0 0 2rem!important;    
+            padding: 1rem 0 0 2rem !important;
         }
-
+ul{
+    margin: 0;
+}
         .hd-items {
             display: flex;
             // margin:2rem 2rem;
@@ -558,9 +562,9 @@ h6 {
                         height: 149px;
                         object-fit: contain;
                         background: rgba(255, 192, 203, .4);
-                        padding-top: .5rem;
+                        padding-top: .4rem;
                     }
-                    h5{
+                    h5 {
                         color: $color0;
                         font-family: Modena;
                         font-size: 27.8px;
@@ -570,10 +574,22 @@ h6 {
                         line-height: 0.55;
                         letter-spacing: normal;
                         text-align: center;
-                        padding: 1rem 0 .3rem;
+                        padding: 0.3rem 0 .3rem;
                     }
                 }
             }
+        }
+    }
+}
+
+.ht-img-slider {
+    .item {
+        display: flex;
+        justify-content: center;
+
+        .item-details {
+            margin-left: 2rem;
+            color: $color0;
         }
     }
 }

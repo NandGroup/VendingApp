@@ -53,7 +53,10 @@ h6 {
 }
 
 .main-bg {
-  background-image: url("/assets/images/home-pg-bg.png");
+  background: -webkit-gradient(linear, left bottom, right top, from(#9905ee), color-stop(#9704ee), color-stop(#871cf0), color-stop(#6c40f2), color-stop(#4871f6), to(#3787f8));
+  background: linear-gradient(to right top, #9905ee, #9704ee, #871cf0, #6c40f2, #4871f6, #3787f8);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
   height: 1320px;
   background-repeat: no-repeat;
   width: 100%;
@@ -277,7 +280,7 @@ h6 {
   width: 220px;
 }
 
-.main-bg .main .content-2 .product-content .item li:not(:last-child):after {
+.main-bg .main .content-2 .product-content .item li:after {
   content: "";
   border-bottom-style: solid;
   border-bottom-width: 2px;
@@ -604,27 +607,25 @@ h6 {
 }
 
 .hd-drink-menu .menu-header {
+  margin: 2rem 0 2rem 0;
+}
+
+.hd-drink-menu .menu-header .back-btn {
+  margin-left: 2rem;
+  float: left;
+}
+
+.hd-drink-menu .menu-header .menu {
   font-family: Modena;
   font-size: 40.6px;
   font-weight: 300;
   font-stretch: condensed;
   font-style: normal;
-  line-height: 0.85;
+  line-height: 1.9;
   letter-spacing: normal;
   text-align: center;
   color: #ffffff;
-  margin: 3rem 0 2rem;
-}
-
-.hd-drink-menu .ht-menu:after {
-  content: "";
-  width: 100%;
-  height: 2px;
-  background-color: white;
-  left: 0;
-  right: 0;
-  position: absolute;
-  display: block;
+  margin-right: 9rem;
 }
 
 .hd-drink-menu .ht-menu .item-category {
@@ -640,6 +641,10 @@ h6 {
   text-align: left;
   color: #fcfafa;
   padding: 1rem 0 0 2rem !important;
+}
+
+.hd-drink-menu .ht-menu ul {
+  margin: 0;
 }
 
 .hd-drink-menu .ht-menu .hd-items {
@@ -658,7 +663,7 @@ h6 {
   -o-object-fit: contain;
      object-fit: contain;
   background: rgba(255, 192, 203, 0.4);
-  padding-top: .5rem;
+  padding-top: .4rem;
 }
 
 .hd-drink-menu .ht-menu .hd-items li a h5 {
@@ -671,6 +676,20 @@ h6 {
   line-height: 0.55;
   letter-spacing: normal;
   text-align: center;
-  padding: 1rem 0 .3rem;
+  padding: 0.3rem 0 .3rem;
+}
+
+.ht-img-slider .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.ht-img-slider .item .item-details {
+  margin-left: 2rem;
+  color: white;
 }
 /*# sourceMappingURL=app.css.map */
