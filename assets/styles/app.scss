@@ -1,4 +1,5 @@
 @import "variable.scss";
+@import "mixins.scss";
 
 //global
 body {
@@ -20,6 +21,15 @@ a {
     text-decoration: none;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    margin: 0;
+}
 
 .main-bg {
     background-image: url('/assets/images/home-pg-bg.png');
@@ -183,20 +193,7 @@ a {
                     }
 
                     .btn1 {
-                        all: unset;
-                        width: 123px;
-                        height: 36px;
-                        font-family: Modena;
-                        font-size: 2rem;
-                        font-stretch: condensed;
-                        font-style: normal;
-                        line-height: 0.32;
-                        letter-spacing: -1.1px;
-                        text-align: center;
-                        background: #00a6eb;
-                        padding: 0.7rem 2rem;
-                        margin-top: 3rem;
-                        border-radius: 34px;
+                       @include btn();
 
                         a {
                             color: white;
@@ -324,21 +321,7 @@ a {
                 }
 
                 .btn1 {
-                    all: unset;
-                    width: 123px;
-                    height: 36px;
-                    font-family: Modena;
-                    font-size: 2rem;
-                    font-stretch: condensed;
-                    font-style: normal;
-                    line-height: 0.32;
-                    letter-spacing: -1.1px;
-                    text-align: center;
-                    background: #00a6eb;
-                    padding: 0.7rem 2rem;
-                    margin-top: 1.5rem;
-                    border-radius: 34px;
-
+                    @include btn();
                     a {
                         color: white;
 
@@ -359,7 +342,7 @@ a {
         display: flex;
 
         .btn-blink {
-            // color: $color0;
+            color: $color0;
             box-shadow: 0px 2px 18px 0 rgba(0, 0, 0, 0.26);
             font-family: Modena;
             font-size: 43.9px;
@@ -373,13 +356,14 @@ a {
             display: flex;
             justify-content: center;
             align-items: center;
-            // background: $color2;
+            background: $color2;
             padding: 3rem;
             border-radius: 50%;
             text-align: center;
-            margin: 0 1rem;
+            margin: 0 1.5rem;
             animation-name: blinker;
-            animation-duration: 1.5s;
+            box-shadow: 0 0 37px 9px black;
+            animation-duration: 1s;
             animation-timing-function: linear;
             animation-iteration-count: infinite;
 
@@ -392,9 +376,15 @@ a {
 
             }
 
-            100% {
+            50% {
                 background-color: white;
                 color: $color2;
+            }
+
+            100% {
+
+                background: $color2;
+                color: white;
 
             }
         }
@@ -405,7 +395,9 @@ a {
     margin-top: -12vh;
     clip-path: polygon(0 28%, 100% 0, 100% 100%, 0% 100%);
     // height: 463px;
-    height: 623px;
+    // height: 545px;
+    // height:590px;
+    height: 620px;
 }
 
 .breaking-news {
@@ -457,13 +449,16 @@ a {
                 border-radius: 50%;
                 padding: 5px;
                 object-fit: contain;
+                width: 100px;
+                height: 100px;
+                padding: 3px;
 
 
                 .flag {
-                    width: 45px;
+                    width: 32px;
                     height: 30px;
                     object-fit: contain;
-                    padding: 5px;
+                    padding: 2px;
 
                 }
             }
@@ -522,24 +517,63 @@ a {
         letter-spacing: normal;
         text-align: center;
         color: #ffffff;
-        margin: 3rem;
+        margin: 3rem 0 2rem;
     }
 
-    .hd-menu {
-        display: flex;
+    .ht-menu {
+        &:after {
+            content: "";
+            width: 100%;
+            height: 2px;
+            background-color: white;
+            left: 0;
+            right: 0;
+            position: absolute;
+            display: block
+        }
+        .item-category {
+            width: 97px;
+            height: 32px;
+            font-family: Modena;
+            font-size: 43.9px;
+            font-weight: 300;
+            font-stretch: condensed;
+            font-style: normal;
+            line-height: 0.39;
+            letter-spacing: normal;
+            text-align: left;
+            color: $color1;
+            padding: 1rem 0 0 2rem!important;    
+        }
 
-        li {
-            padding: 2rem 3.5rem;
+        .hd-items {
+            display: flex;
+            // margin:2rem 2rem;
 
-            a {
-                img {
-                    width: 66px;
-                    height: 149px;
-                    object-fit: contain;
+            li {
+                padding: 0 2rem;
+                a {
+                    img {
+                        width: 130px;
+                        height: 149px;
+                        object-fit: contain;
+                        background: rgba(255, 192, 203, .4);
+                        padding-top: .5rem;
+                    }
+                    h5{
+                        color: $color0;
+                        font-family: Modena;
+                        font-size: 27.8px;
+                        font-weight: 300;
+                        font-stretch: condensed;
+                        font-style: normal;
+                        line-height: 0.55;
+                        letter-spacing: normal;
+                        text-align: center;
+                        padding: 1rem 0 .3rem;
+                    }
                 }
             }
-
-
         }
     }
 }

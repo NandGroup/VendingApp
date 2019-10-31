@@ -42,6 +42,16 @@ a {
   text-decoration: none;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
 .main-bg {
   background-image: url("/assets/images/home-pg-bg.png");
   height: 1320px;
@@ -362,7 +372,7 @@ a {
   text-align: center;
   background: #00a6eb;
   padding: 0.7rem 2rem;
-  margin-top: 1.5rem;
+  margin-top: 3rem;
   border-radius: 34px;
 }
 
@@ -382,6 +392,7 @@ a {
 }
 
 .main-bg .drink-btns .btn-blink {
+  color: white;
   -webkit-box-shadow: 0px 2px 18px 0 rgba(0, 0, 0, 0.26);
           box-shadow: 0px 2px 18px 0 rgba(0, 0, 0, 0.26);
   font-family: Modena;
@@ -402,14 +413,17 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: #00aef0;
   padding: 3rem;
   border-radius: 50%;
   text-align: center;
-  margin: 0 1rem;
+  margin: 0 1.5rem;
   -webkit-animation-name: blinker;
           animation-name: blinker;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
+  -webkit-box-shadow: 0 0 37px 9px black;
+          box-shadow: 0 0 37px 9px black;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
@@ -418,23 +432,31 @@ a {
 
 @-webkit-keyframes blinker {
   0% {
-    background: #00a6eb;
+    background: #00aef0;
     color: white;
   }
-  100% {
+  50% {
     background-color: white;
-    color: #00a6eb;
+    color: #00aef0;
+  }
+  100% {
+    background: #00aef0;
+    color: white;
   }
 }
 
 @keyframes blinker {
   0% {
-    background: #00a6eb;
+    background: #00aef0;
     color: white;
   }
-  100% {
+  50% {
     background-color: white;
-    color: #00a6eb;
+    color: #00aef0;
+  }
+  100% {
+    background: #00aef0;
+    color: white;
   }
 }
 
@@ -442,7 +464,7 @@ a {
   margin-top: -12vh;
   -webkit-clip-path: polygon(0 28%, 100% 0, 100% 100%, 0% 100%);
           clip-path: polygon(0 28%, 100% 0, 100% 100%, 0% 100%);
-  height: 623px;
+  height: 620px;
 }
 
 .breaking-news {
@@ -451,7 +473,7 @@ a {
 }
 
 .breaking-news .news-content {
-  background: #00a6eb;
+  background: #00aef0;
   height: 100%;
   border-radius: 75px 0 0 75px;
   display: -webkit-box;
@@ -523,14 +545,17 @@ a {
   padding: 5px;
   -o-object-fit: contain;
      object-fit: contain;
+  width: 100px;
+  height: 100px;
+  padding: 3px;
 }
 
 .breaking-news .news-content .settings .languages .flag {
-  width: 45px;
+  width: 32px;
   height: 30px;
   -o-object-fit: contain;
      object-fit: contain;
-  padding: 5px;
+  padding: 2px;
 }
 
 .hd-drink-menu {
@@ -542,7 +567,7 @@ a {
 .hd-drink-menu .hd-topbar {
   height: 129px;
   width: 100%;
-  background: #00a6eb;
+  background: #00aef0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -588,23 +613,64 @@ a {
   letter-spacing: normal;
   text-align: center;
   color: #ffffff;
-  margin: 3rem;
+  margin: 3rem 0 2rem;
 }
 
-.hd-drink-menu .hd-menu {
+.hd-drink-menu .ht-menu:after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  left: 0;
+  right: 0;
+  position: absolute;
+  display: block;
+}
+
+.hd-drink-menu .ht-menu .item-category {
+  width: 97px;
+  height: 32px;
+  font-family: Modena;
+  font-size: 43.9px;
+  font-weight: 300;
+  font-stretch: condensed;
+  font-style: normal;
+  line-height: 0.39;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fcfafa;
+  padding: 1rem 0 0 2rem !important;
+}
+
+.hd-drink-menu .ht-menu .hd-items {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.hd-drink-menu .hd-menu li {
-  padding: 2rem 3.5rem;
+.hd-drink-menu .ht-menu .hd-items li {
+  padding: 0 2rem;
 }
 
-.hd-drink-menu .hd-menu li a img {
-  width: 66px;
+.hd-drink-menu .ht-menu .hd-items li a img {
+  width: 130px;
   height: 149px;
   -o-object-fit: contain;
      object-fit: contain;
+  background: rgba(255, 192, 203, 0.4);
+  padding-top: .5rem;
+}
+
+.hd-drink-menu .ht-menu .hd-items li a h5 {
+  color: white;
+  font-family: Modena;
+  font-size: 27.8px;
+  font-weight: 300;
+  font-stretch: condensed;
+  font-style: normal;
+  line-height: 0.55;
+  letter-spacing: normal;
+  text-align: center;
+  padding: 1rem 0 .3rem;
 }
 /*# sourceMappingURL=app.css.map */
