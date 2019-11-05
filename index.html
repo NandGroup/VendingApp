@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./assets/styles/app.css" type="text/css">
     <title>VendingApp</title>
 </head>
+
 <body>
     <section class="main-bg">
         <div class="topbar">
@@ -22,9 +23,9 @@
             <div class="scanbar">
                 <p class="scan-qr">Scan the QR</p>
                 <p class="i-logo">i</p>
-                <img class="cell-coffe-cap" src="./assets/images/cell-coffee-capp.png" width="50px" height="100px"
+                <img class="cell-coffe-cap" src="./assets/images/cell-coffee-capp.png" width="50" height="100"
                     alt="">
-                <img class="code-machine" src="./assets/images/qr-code.png" width="100px" height="100px" alt="">
+                <img class="code-machine" src="./assets/images/qr-code.png" width="100" height="100" alt="">
             </div>
         </div>
 
@@ -36,12 +37,12 @@
                     <div class="product-desription">
                         <div class="price">1.40</div>
                         <div class="product-name">barretta fitness
-                                al cioccolato </div>
+                            al cioccolato </div>
                         <div class="description">
                             Il piacere intenso del cioccolato in meno di 100 calorie. Frumento e avena integrali, riso e
                             vitamine del gruppo B, per darti la giusta carica in ogni momento della giornata.
                         </div>
-                        <button class="btn1"><a href="#">provalo</a></button>
+                        <a class="btn1" href="#">provalo</a>
                     </div>
                 </div>
             </div>
@@ -66,9 +67,9 @@
                             palato.
                         </div>
                         <div class="quantity">formato XL</div>
-                        <button class="btn1"><a href="#">provalo</a></button>
+                        <a class="btn1" href="#">provalo</a>
                     </div>
-                </div content-2>
+                </div>
             </div>
 
         </div>
@@ -117,34 +118,76 @@
                     </div>
                     <p class="news">Stangata Ue per Apple e Amazon . Al gigante e-commerce inf....</p>
                 </div>
-
             </div>
             <div class="settings">
-                <div><a href="#"><img class="settings-item" src="./assets/images/-e-HELP.png" alt=""></a></div>
-                <div><a href="#"><img class="settings-item" src="./assets/images/icona-tastierino.png" alt=""></a></div>
-                <a class="settings-item languages" href="#">
+                <div class="settings-item" id="help-btn"><img src="./assets/images/-e-HELP.png" alt=""></div>
+                <div class="settings-item" id="productCode-btn"><img src="./assets/images/icona-tastierino.png" alt="">
+                </div>
+                <div class="settings-item" id="language-icon">
                     <img class="flag" src="./assets/images/flagesp.png" alt="">
                     <img class="flag" src="./assets/images/flagfr.png" alt="">
                     <img class="flag" src="./assets/images/flagit.png" alt="">
                     <img class="flag" src="./assets/images/flaggb.png" alt="">
-                </a>
+                </div>
             </div>
-
         </div>
     </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
+    <div id="bg-support-popUp">
+        <div id="support-popUp">
+            <h1 class="support-head-text">Communication<br>Error</h1>
+            <img class="close-btn" src="./assets/images/x.png" alt="x">
+            <img class="support-img" src="./assets/images/help.png" alt="help">
+            <img class="personaggio-img" src="./assets/images/personaggio.png" alt="">
+            <h1 class="bottom-headText"> Do you need <br> assistance?</h1>
+            <p>Technnical support <br> toll-free number <br>
+                <span>800-801-213</span>
+            </p>
+        </div>
+    </div>
+    <!--Product code button -->
+    <div id="bg-ProductCode-popUp">
+        <div id="ProductCode-popUp">
+            <img class="close-btn1" src="./assets/images/x.png" alt="x">
+            <h1 class="head-text">Enter the code <br> of your product</h1>
+            <div class="NumbarPad">
+                <div id="output"></div>
+                <div class="row">
+                    <div class="digit" id="one">1</div>
+                    <div class="digit" id="two">2</div>
+                    <div class="digit" id="three">3</div>
+                </div>
+                <div class="row">
+                    <div class="digit" id="four">4</div>
+                    <div class="digit" id="five">5</div>
+                    <div class="digit" id="Six">6</div>
+                </div>
+                <div class="row">
+                    <div class="digit" id="seven">7</div>
+                    <div class="digit" id="eight">8</div>
+                    <div class="digit" id="nine">9</div>
+                </div>
+                <div class="row">
+                    <div class="digit" id="a">A</div>
+                    <div class="digit" id="zero">0</div>
+                    <div class="digit" id="b">B</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MultiLanguage Selection -->
+    <div id="bg-language-popUp">
+        <div id="language-popUp">
+            <img class="close-btn2" src="./assets/images/x.png" alt="x">
+            <div id="language-btns">
+                <h1 class="head-text">Change language</h1>
+                <button class="language">Italiano</button>
+                <button class="language">English</button>
+                <button class="language">Francais</button>
+                <button class="language">Espanol</button>
+            </div>
+        </div>
+    </div>
 
 
 

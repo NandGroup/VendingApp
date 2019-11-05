@@ -10,7 +10,7 @@ body {
     box-sizing: border-box;
     width: 1084px;
     height: 1920px;
-    margin: 0 auto;
+    margin: auto;
 }
 
 ul {
@@ -36,6 +36,7 @@ h6 {
     background: linear-gradient(to right top, #9905ee, #9704ee, #871cf0, #6c40f2, #4871f6, #3787f8);
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
     height: 1320px;
+    height: 1375px;
     background-repeat: no-repeat;
     width: 100%;
     position: relative;
@@ -74,18 +75,18 @@ h6 {
                 // width: 150px;
                 background: #4475f6;
                 padding-left: 7px;
-                text-overflow: ellipsis;
                 /* Required for text-overflow to do anything */
-                white-space: nowrap;
+                @include textOverflow();
                 overflow: hidden;
             }
 
             .i-logo {
+                @include flex();
                 position: absolute;
                 right: -1.2rem;
                 top: -2.9rem;
                 font-size: 2rem;
-                font-family: modena;
+                font-family: $font1;
                 border: 2px solid white;
                 border-radius: 50%;
                 background: #3a83f8;
@@ -94,15 +95,6 @@ h6 {
                 padding: 7px;
                 font-weight: lighter;
                 text-align: center;
-                display: -webkit-box;
-                display: -ms-flexbox;
-                display: flex;
-                -webkit-box-pack: center;
-                -ms-flex-pack: center;
-                justify-content: center;
-                -webkit-box-align: center;
-                -ms-flex-align: center;
-                align-items: center;
                 text-align: center;
             }
 
@@ -157,7 +149,7 @@ h6 {
                     // margin-top: 4rem;
                     .price {
                         width: 99px;
-                        font-family: Modena;
+                        font-family: $font1;
                         font-size: 50px;
                         font-weight: bold;
                         font-stretch: condensed;
@@ -169,8 +161,7 @@ h6 {
                     }
 
                     .product-name {
-
-                        font-family: Modena;
+                        font-family: $font1;
                         font-size: 3rem;
                         font-stretch: condensed;
                         font-style: normal;
@@ -181,7 +172,7 @@ h6 {
 
                     .description {
                         height: 92px;
-                        font-family: Modena;
+                        font-family: $font1;
                         font-size: 28px;
                         font-weight: 300;
                         font-stretch: condensed;
@@ -196,6 +187,29 @@ h6 {
 
                     .btn1 {
                         @include btn();
+                        transform: scale(1);
+                        animation-name: btn;
+                        animation-duration: 2s;
+                        margin-top: 3rem;
+
+
+                        @keyframes btn {
+                            0% {
+                                opacity: 0;
+                                transform: scale(1);
+                            }
+
+                            50% {
+                                opacity: 1;
+                                transform: scale(1.3);
+
+                            }
+
+                            100% {
+                                opacity: 1;
+                                transform: scale(1);
+                            }
+                        }
 
                         a {
                             color: white;
@@ -219,14 +233,13 @@ h6 {
                 margin-top: 7rem;
 
                 .item {
-                    text-overflow: ellipsis;
                     /* Required for text-overflow to do anything */
-                    white-space: nowrap;
+                    @include textOverflow();
                     overflow: hidden;
 
                     li {
                         padding: .5rem 1rem .5rem 1.5rem;
-                        font-family: Modena;
+                        font-family: $font1;
                         font-size: 36px;
                         font-weight: bold;
                         font-stretch: condensed;
@@ -237,7 +250,7 @@ h6 {
                         color: #00aeef;
                         width: 220px;
 
-                        &:after {
+                        &:not(:last-child):after {
                             content: "";
                             border-bottom-style: solid;
                             border-bottom-width: 2px;
@@ -272,7 +285,7 @@ h6 {
 
                 .price {
                     width: 99px;
-                    font-family: Modena;
+                    font-family: $font1;
                     font-size: 50px;
                     font-weight: bold;
                     font-stretch: condensed;
@@ -285,7 +298,7 @@ h6 {
 
                 .product-name {
 
-                    font-family: Modena;
+                    font-family: $font1;
                     font-size: 3rem;
                     font-stretch: condensed;
                     font-style: normal;
@@ -296,7 +309,7 @@ h6 {
 
                 .description {
                     height: 92px;
-                    font-family: Modena;
+                    font-family: $font1;
                     font-size: 28px;
                     font-weight: 300;
                     font-stretch: condensed;
@@ -311,7 +324,7 @@ h6 {
 
                 .quantity {
                     height: 31px;
-                    font-family: Modena;
+                    font-family: $font1;
                     font-size: 2.5rem;
                     font-weight: 300;
                     font-stretch: condensed;
@@ -320,12 +333,37 @@ h6 {
                     letter-spacing: normal;
                     text-align: left;
                     color: #ffffff;
-                    text-overflow: ellipsis;
                     padding: 1.5rem 0;
+                    @include textOverflow();
+
                 }
 
                 .btn1 {
                     @include btn();
+                    transform: scale(1);
+                    animation-name: btn;
+                    animation-duration: 2s;
+                    margin-top: 3rem;
+
+
+                    @keyframes btn {
+                        0% {
+                            opacity: 0;
+                            transform: scale(1);
+                        }
+
+                        50% {
+                            opacity: 1;
+                            transform: scale(1.3);
+
+                        }
+
+                        100% {
+                            opacity: 1;
+                            transform: scale(1);
+                        }
+                    }
+
                     a {
                         color: white;
 
@@ -345,20 +383,18 @@ h6 {
         display: flex;
 
         .btn-blink {
+            @include flex();
             color: $color0;
             box-shadow: 0px 2px 18px 0 rgba(0, 0, 0, 0.26);
-            font-family: Modena;
+            font-family: $font1;
             font-size: 43.9px;
             font-weight: 300;
             font-stretch: condensed;
             font-style: normal;
             line-height: 0.9;
             letter-spacing: -1.1px;
-            width: 5rem;
-            height: 5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            width: 4rem;
+            height: 4rem;
             background: $color2;
             padding: 3rem;
             border-radius: 50%;
@@ -369,7 +405,6 @@ h6 {
             animation-duration: 1s;
             animation-timing-function: linear;
             animation-iteration-count: infinite;
-
         }
 
         @keyframes blinker {
@@ -417,9 +452,7 @@ h6 {
         align-items: center;
 
         .news-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            @include flex();
         }
 
         .daily-news {
@@ -430,24 +463,21 @@ h6 {
         }
 
         .settings {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include flex();
             margin: .2rem;
 
             .settings-item {
-                width: 119px;
-                height: 119px;
+                // width: 119px;
+                // height: 119px;
+                // width: 125px;
+                // height: 125px;
                 margin: 0 .5rem;
             }
 
-            .languages {
-
-                display: flex;
+            #language-icon {
+                @include flex();
                 flex-direction: column;
                 flex-wrap: wrap;
-                justify-content: center;
-                align-items: center;
                 background: $color0;
                 border-radius: 50%;
                 padding: 5px;
@@ -455,7 +485,6 @@ h6 {
                 width: 100px;
                 height: 100px;
                 padding: 3px;
-
 
                 .flag {
                     width: 32px;
@@ -492,7 +521,7 @@ h6 {
             color: $color0;
             text-align: center;
             // font-size: 1.5rem;
-            font-family: Modena;
+            font-family: $font1;
             font-size: 32.5px;
             font-weight: 500;
             font-stretch: condensed;
@@ -510,14 +539,21 @@ h6 {
         }
     }
 
+    .hd-main {
+        // height: 1525px;
+        height: 1393px;
+    }
+
     .menu-header {
-        margin:2rem 0 2rem 0;
+        margin: 2rem 0 2rem 0;
+
         .back-btn {
-            margin-left:2rem;
+            margin-left: 2rem;
             float: left;
         }
+
         .menu {
-            font-family: Modena;
+            font-family: $font1;
             font-size: 40.6px;
             font-weight: 300;
             font-stretch: condensed;
@@ -535,7 +571,7 @@ h6 {
         .item-category {
             width: 97px;
             height: 32px;
-            font-family: Modena;
+            font-family: $font1;
             font-size: 43.9px;
             font-weight: 300;
             font-stretch: condensed;
@@ -546,15 +582,18 @@ h6 {
             color: $color1;
             padding: 1rem 0 0 2rem !important;
         }
-ul{
-    margin: 0;
-}
+
+        ul {
+            margin: 0;
+        }
+
         .hd-items {
             display: flex;
             // margin:2rem 2rem;
 
             li {
                 padding: 0 2rem;
+
                 a {
                     img {
                         width: 130px;
@@ -563,9 +602,10 @@ ul{
                         background: rgba(255, 192, 203, .4);
                         padding-top: .4rem;
                     }
+
                     h5 {
                         color: $color0;
-                        font-family: Modena;
+                        font-family: $font1;
                         font-size: 27.8px;
                         font-weight: 300;
                         font-stretch: condensed;
@@ -582,13 +622,378 @@ ul{
 }
 
 .ht-img-slider {
+    background: linear-gradient(to right, #9905ee, #940bef, #7e28f1, #614ef4);
+    height: 366px;
+
     .item {
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
+        margin-top: 1rem;
 
         .item-details {
-            margin-left: 2rem;
+            margin: 1rem 0 0 2rem;
             color: $color0;
+
+            .price {
+                font-family: $font1;
+                font-size: 50px;
+                font-weight: bold;
+                font-stretch: condensed;
+                font-style: normal;
+                line-height: 0.67;
+                letter-spacing: -0.5px;
+                text-align: center;
+                color: $color5;
+                background: $color0;
+                padding: .7rem 1rem;
+                width: 98px;
+            }
+
+            .item-name {
+                font-family: $font1;
+                font-size: 50.3px;
+                font-weight: bold;
+                font-stretch: condensed;
+                font-style: normal;
+                line-height: 1;
+                letter-spacing: -0.5px;
+                text-align: left;
+                color: #ffffff;
+                @include textOverflow();
+                overflow: hidden;
+                padding: 1rem 0;
+            }
+
+            .btn1 {
+                @include btn();
+            }
+        }
+
+        .hd-product {
+            width: 169px;
+            height: 196px;
+            object-fit: contain;
+        }
+
+        .item-content {
+            li {
+                padding: .8rem 0;
+                font-family: $font1;
+                font-size: 31.8px;
+                font-weight: 300;
+                font-stretch: condensed;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                text-align: right;
+                color: $color6;
+                @include textOverflow();
+                overflow: hidden;
+
+                &:not(:last-child):after {
+                    content: "";
+                    border-bottom-style: solid;
+                    border-bottom-width: 2px;
+                    display: table-cell;
+                    width: 210px;
+                    color: $color0;
+                }
+
+                span {
+                    color: $color0;
+                }
+
+                strong {
+                    font-family: $font1;
+                    font-size: 48px;
+                    font-weight: bold;
+                    font-stretch: condensed;
+                    font-style: normal;
+                    line-height: 0.98;
+                    letter-spacing: -0.48px;
+                    text-align: left;
+                    color: $color6;
+                }
+            }
+        }
+    }
+}
+
+// Footer support button
+#bg-support-popUp {
+    // width: 1084px;
+    // height: 1920px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 166, 235, .7);
+    display: none;
+    top: 0;
+    position: absolute;
+
+    #support-popUp {
+        width: 884px;
+        height: 1401px;
+        background: white;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        z-index: 10;
+        color: #00a6eb;
+        text-align: center;
+        font-family: $font1;
+
+        .support-head-text {
+            font-size: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: normal;
+            position: relative;
+            top: -5px;
+        }
+
+        .close-btn {
+            position: absolute;
+            position: absolute;
+            right: 0;
+            top: 0;
+            margin: 1.2rem;
+        }
+
+        .support-img {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 10px);
+        }
+
+        .personaggio-img {
+            position: absolute;
+            top: 59%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .bottom-headText {
+            position: absolute;
+            font-size: 4.7rem;
+            line-height: 1;
+            font-weight: normal;
+            bottom: 26%;
+            left: 50%;
+            transform: translate(-50%, 10px) rotate(-8deg);
+        }
+
+        p {
+            position: absolute;
+            bottom: 7%;
+            left: 50%;
+            transform: translate(-50%, 10px);
+            background-color: white;
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            color: black;
+
+            span {
+                color: #00a6eb;
+                font-weight: bold;
+                font-size: 4.5rem;
+            }
+        }
+    }
+}
+
+// footer Product code Popup
+#bg-ProductCode-popUp {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 166, 235, .7);
+    display: none;
+    top: 0;
+    position: absolute;
+
+
+    #ProductCode-popUp {
+        width: 922px;
+        height: 1762px;
+        background: white;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        z-index: 10;
+        color: #00a6eb;
+        text-align: center;
+
+        .close-btn1 {
+            position: absolute;
+            right: 0;
+            margin: 1.5rem;
+        }
+
+        .head-text {
+            font-size: 6rem;
+            letter-spacing: 1px;
+            font-weight: normal;
+            font-family: $font2;
+            // position: absolute;
+            // top:-10%;
+            object-fit: contain;
+            line-height: 0.9;
+            letter-spacing: normal;
+            text-align: center;
+            color: #00a6eb;
+            @include textOverflow();
+            transform: rotate(-9deg);
+        }
+
+        .NumbarPad {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            .row {
+                display: flex;
+                text-align: center;
+
+                .digit {
+                    font-family: $font1;
+                    font-size: 8.5rem;
+                    font-weight: bold;
+                    font-stretch: condensed;
+                    font-style: normal;
+                    line-height: normal;
+                    letter-spacing: normal;
+                    text-align: center;
+                    color: $color0;
+                    padding: 2rem 4rem;
+                    margin: 1rem;
+                    background: #00afed;
+                    width: 6rem;
+                    height: 8rem;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+}
+
+// footer Language Selection popup
+#bg-language-popUp {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 166, 235, .7);
+    display: none;
+    top: 0;
+    position: absolute;
+
+    #language-popUp {
+        width: 884px;
+        height: 1401px;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        background: white;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        z-index: 10;
+        color: #00a6eb;
+        text-align: center;
+
+        .close-btn2 {
+            position: absolute;
+            right: 0;
+            margin: 1.5rem;
+        }
+
+        .head-text {
+            font-size: 6rem;
+            letter-spacing: 1px;
+            font-weight: normal;
+            font-family: $font2;
+            position: absolute;
+            top: -10%;
+            width: 541px;
+            object-fit: contain;
+            line-height: 0.9;
+            letter-spacing: normal;
+            text-align: center;
+            color: #00a6eb;
+            @include textOverflow();
+            transform: rotate(-9deg);
+        }
+
+        #language-btns {
+            @include flex();
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+
+
+            .language {
+                all: unset;
+                width: 259px;
+                height: 73px;
+                border-radius: 36.5px;
+                border: 1px solid $color6;
+                //    background-color: #00aeef;
+                font-family: font1;
+                font-size: 2.3rem;
+                font-weight: 300;
+                line-height: 0.39;
+                letter-spacing: -0.9px;
+                text-align: center;
+                color: #00a6eb;
+                margin: 1.2rem 0;
+            }
+        }
+    }
+}
+
+//HOt Drink page product pop up
+#hd-product-popUp-bg {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 166, 235, .7);
+    // display: none;
+    top: 0;
+    position: absolute;
+
+    #product-popUp {
+        width: 922px;
+        height: 1762px;
+        background: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        color: #00a6eb;
+        text-align: center;
+
+        .close-btn {
+            position: absolute;
+            right: 0;
+            margin: 1.5rem;
+        }
+
+        .hd-product-bg {
+            margin: 4rem auto 0 auto;
+            width: 384px;
+            height: 384px;
+            object-fit: contain;
+            background-image: linear-gradient(to top right, #871cf0, #6c40f2, #4871f6);
+            border-radius: 50%;
+
+            .hd-product {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+            }
         }
     }
 }

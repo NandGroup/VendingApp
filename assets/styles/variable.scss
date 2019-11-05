@@ -5,8 +5,14 @@ $color1:#fcfafa;
 $color2:#00aef0;
 //light blue
 $color3:#00a6eb;
-//purple
+//Majorelle blue
 $color4:#624df3;
+//Deep Sky Blue
+$color6:#00aeef;
+//Dark violet
+$color5:#930def;
+
+
 
 
 //fonts
@@ -16,22 +22,30 @@ $font2:MADEGoodTimeScript;
     font-family: MADEGoodTimeScript;
     src:url(/assets/fonts/MADEGoodTimeScriptPERSONALUSE.otf);
     font-style: normal;
+    font-weight: normal;
+    font-stretch: normal;
 }
 @font-face{
     font-family: modena;
     src:url('/assets/fonts/MODCB__.ttf'),
         url('/assets/fonts/Modena-CondensedBold.otf');
         font-style: normal;
+        font-stretch: condensed;
+
     }
 @font-face{
     font-family: modena;
     src: url('/assets/fonts/MODCL__.ttf'),
     url('/assets/fonts/Modena-CondensedLight.otf');
     font-style: normal;
+    font-stretch: condensed;
+
 }    
 @font-face{
     font-family: modena;
     src: url('/assets/fonts/MODCM__.ttf'),
     url('/assets/fonts/Modena-CondensedMedium.otf');
     font-style: normal;
+    font-stretch: condensed;
+
 }
